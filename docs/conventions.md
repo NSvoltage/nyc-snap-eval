@@ -47,6 +47,24 @@ Every row in the authoring sheet has these columns. No exceptions.
 
 If you ever feel the urge to add a column, surface it. Schema changes go through an ADR.
 
+### Authoring sheet
+
+The authoring surface is a Google Sheet at https://docs.google.com/spreadsheets/d/1CV7O8qHMTYQVFHCVFkWIE_zeDsFIyUDovCDLCHPmAcc/edit (anyone-with-the-link can edit). One tab per category, named to match the CSV filename:
+
+| Tab name (in the Sheet) | CSV filename (in `eval/cases/`) |
+|---|---|
+| `A_mycity_replay` | `A_mycity_replay.csv` |
+| `B_factual_recall` | `B_factual_recall.csv` |
+| `C_refusal_escalation` | `C_refusal_escalation.csv` |
+| `D_eligibility_edge_cases` | `D_eligibility_edge_cases.csv` |
+| `E_adversarial` | `E_adversarial.csv` |
+| `F_multilingual` | `F_multilingual.csv` |
+| `G_grounding_citation` | `G_grounding_citation.csv` |
+
+Row 1 of every tab is the header row, with all twelve required columns (plus `notes`) in the canonical order. `scripts/export_sheet_to_csv.py` validates this on every export and refuses to overwrite a CSV when the header is missing or malformed.
+
+After editing the sheet, run `uv run python scripts/export_sheet_to_csv.py` and commit the resulting CSV changes with a `chore(cases):` or `feat(cases):` message that references the relevant ADR or research file. The CSVs are the canonical record; the Sheet is the authoring surface.
+
 ## 3. Voice
 
 This is the most important section in the file. The artifact is judged on voice as much as on technical merit.

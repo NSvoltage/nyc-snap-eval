@@ -18,13 +18,13 @@ Python 3.11+, managed via `uv` (see `pyproject.toml` at the repo root). Run any 
 - **`scrape_hra_pages.py`** — Fetches the canonical NYC HRA public SNAP pages (URL list discovered by crawling internal links from the main SNAP page on 2026-05-11).
   - Writes raw HTML, extracted text (BeautifulSoup, chrome-stripped), per-page meta YAML, and a top-level `meta.yaml` index to `data/policy_corpus/nyc/hra-public-pages/`.
   - Includes the published `snap_need_to_know.pdf` from NYC HRA.
+- **`export_sheet_to_csv.py`** — Pulls the authoring Google Sheet (sheet ID hardcoded; override with `--sheet-id`) and writes one CSV per tab to `eval/cases/`. Hits the public `gviz` CSV endpoint, so no auth is needed when the sheet is shared as "anyone with the link." Validates that row 1 of every tab contains all twelve required columns from `docs/conventions.md` §2; refuses to overwrite if a tab is empty or has the wrong header.
 
 ## Planned (not yet built)
 
 - **`verify_corpus.py`** — Re-check that every source in `data/policy_corpus/` still resolves and matches the recorded revision date. Run before each eval run.
 - **`verify_citations.py`** — Day-14 check: every `citation_url` in every case CSV resolves and contains the cited text. Used in CI.
 - **`embed_corpus.py`** — Generate voyage-3 embeddings for the chunked corpus and upsert to pgvector. Re-run when the corpus is refreshed.
-- **`export_sheet_to_csv.py`** — Pull the latest version of the authoring Google Sheet and write CSVs to `eval/cases/`. The CSVs are the canonical record; the sheet is the authoring surface.
 
 ## Conventions
 

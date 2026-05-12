@@ -12,7 +12,7 @@ The v2 build plan, distilled. Day-by-day sequencing for the two-week build.
 - The NYC Benefits Screening API **requires Bearer-token authentication**. A registered account is a Days-8–10 prerequisite.
 - The `otda.ny.gov` origin was unreachable from the pulling network; SNAPSB and GIS messages were Wayback-served. Byte-comparison against the origin is a corpus-refresh hygiene item.
 
-**Pick up here:** Day 2 — author the Category A (MyCity replay) case set. Open [`docs/research/r2-eval-methodology-and-mycity-postmortem.md`](research/r2-eval-methodology-and-mycity-postmortem.md) for the documented prompts and statute citations; populate `eval/cases/A_mycity_replay.csv` using the schema in [`docs/conventions.md` §2](conventions.md). Also pending from Day 1: SME-reviewer outreach email; see the open items below in the Day-1 checklist.
+**Pick up here:** Day 2 — author the Category A (MyCity replay) case set. Authoring surface is the Google Sheet at https://docs.google.com/spreadsheets/d/1CV7O8qHMTYQVFHCVFkWIE_zeDsFIyUDovCDLCHPmAcc/edit (anyone-with-link can edit); the seven tabs need first-time setup per [`eval/cases/README.md`](../eval/cases/README.md#first-time-sheet-setup-one-off). Open [`docs/research/r2-eval-methodology-and-mycity-postmortem.md`](research/r2-eval-methodology-and-mycity-postmortem.md) for the documented MyCity prompts and statute citations. After authoring, run `uv run python scripts/export_sheet_to_csv.py` to refresh `eval/cases/A_mycity_replay.csv` (the committed canonical record). Also pending from Day 1: SME-reviewer outreach and the NYC Benefits Screening API account request — drafts ready at [`docs/outreach/`](outreach/).
 
 ## Thesis
 

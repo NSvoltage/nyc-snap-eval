@@ -62,7 +62,7 @@ These do not bend. If a request would violate one, push back before acting.
 These are decided. Don't re-litigate without an ADR.
 
 - **Eval harness:** Promptfoo (see ADR-001)
-- **Authoring surface:** Google Sheet read directly by Promptfoo, mirroring Propel's pattern
+- **Authoring surface:** Google Sheet at https://docs.google.com/spreadsheets/d/1CV7O8qHMTYQVFHCVFkWIE_zeDsFIyUDovCDLCHPmAcc/edit (anyone-with-link can edit). Exported to per-category CSVs via `scripts/export_sheet_to_csv.py`; the committed CSVs in `eval/cases/` are the canonical record that Promptfoo reads. The two-step flow trades Propel's one-source-of-truth pattern for reproducibility per `docs/conventions.md` §6 (CI runs offline, every release pins case content via `git log`).
 - **System under test (primary):** Claude Sonnet 4.5 via Anthropic API
 - **Comparison models:** GPT-4o, Gemini 2.5 Pro, plus the simulated baseline
 - **Judge model:** Claude Opus 4.5, pinned, with published meta-prompt
