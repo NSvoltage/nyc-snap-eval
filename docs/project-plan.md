@@ -4,6 +4,8 @@ The v2 build plan, distilled. Day-by-day sequencing for the two-week build.
 
 ## Where we are (updated 2026-05-11)
 
+> Aggregate in-flight / blocked / done / forward-milestones view: [`docs/status.md`](status.md). The day-by-day plan below is the canonical sequencing; `status.md` is the cross-day aggregate.
+
 **Days 1 and 2 are complete.** Corpus is pulled and pinned, Promptfoo config validates, and the Category A (MyCity replay) case set is authored and committed. The state-of-the-world findings from Day 1 are recorded in the Day-1 freshness audit ([`r5`](research/r5-freshness-audit-2026-05-11.md)) and [ADR-008](decisions/ADR-008-post-obbba-post-mycity-amendments.md):
 
 - MyCity chatbot was discontinued by the Mamdani administration on 2026-02-05 → Category A is a post-mortem regression set.
