@@ -4,7 +4,7 @@ The v2 build plan, distilled. Day-by-day sequencing for the two-week build.
 
 ## Where we are (updated 2026-05-11)
 
-**Day 1 is complete.** Corpus is pulled and pinned. Promptfoo config validates. Day-1 freshness audit ([`r5`](research/r5-freshness-audit-2026-05-11.md)) and [ADR-008](decisions/ADR-008-post-obbba-post-mycity-amendments.md) record the substantive changes since the plan was first written:
+**Days 1 and 2 are complete.** Corpus is pulled and pinned, Promptfoo config validates, and the Category A (MyCity replay) case set is authored and committed. The state-of-the-world findings from Day 1 are recorded in the Day-1 freshness audit ([`r5`](research/r5-freshness-audit-2026-05-11.md)) and [ADR-008](decisions/ADR-008-post-obbba-post-mycity-amendments.md):
 
 - MyCity chatbot was discontinued by the Mamdani administration on 2026-02-05 → Category A is a post-mortem regression set.
 - The One Big Beautiful Bill Act of 2025-07-04 reshaped federal SNAP statute, but 7 CFR Part 273 has not been amended since 2025-01-17 → cases that hinge on post-OBBBA rules must cite the statute and state guidance, not federal regulations alone.
@@ -12,7 +12,13 @@ The v2 build plan, distilled. Day-by-day sequencing for the two-week build.
 - The NYC Benefits Screening API **requires Bearer-token authentication**. A registered account is a Days-8–10 prerequisite.
 - The `otda.ny.gov` origin was unreachable from the pulling network; SNAPSB and GIS messages were Wayback-served. Byte-comparison against the origin is a corpus-refresh hygiene item.
 
-**Pick up here:** Day 2 — author the Category A (MyCity replay) case set. Authoring surface is the Google Sheet at https://docs.google.com/spreadsheets/d/1CV7O8qHMTYQVFHCVFkWIE_zeDsFIyUDovCDLCHPmAcc/edit (anyone-with-link can edit); the seven tabs need first-time setup per [`eval/cases/README.md`](../eval/cases/README.md#first-time-sheet-setup-one-off). Open [`docs/research/r2-eval-methodology-and-mycity-postmortem.md`](research/r2-eval-methodology-and-mycity-postmortem.md) for the documented MyCity prompts and statute citations. After authoring, run `uv run python scripts/export_sheet_to_csv.py` to refresh `eval/cases/A_mycity_replay.csv` (the committed canonical record). Also pending from Day 1: SME-reviewer outreach and the NYC Benefits Screening API account request — drafts ready at [`docs/outreach/`](outreach/).
+Day-2 added one new finding of the same shape (parallel to ADR-008 §5):
+
+- The **state and city legislative-codifier sites** (`nysenate.gov`, `codelibrary.amlegal.com`, `law.justia.com`, `codes.findlaw.com`) all return Cloudflare bot-protection challenges (HTTP 403) from the corpus-pull network, even with full browser-class headers. Canonical URLs *do* resolve in real browsers and *do* contain the cited statute text — the constraint is bot detection, not link rot. Per-row Wayback fallback URLs (verified 2026-05-11) are recorded in the `notes` column of [`eval/cases/A_mycity_replay.csv`](../eval/cases/A_mycity_replay.csv); the framing decisions and full contingency are in [`docs/handoffs/day-2-category-a-authoring-notes.md`](handoffs/day-2-category-a-authoring-notes.md). Day-14 `verify_citations.py` will need a browser-class fetcher (Playwright or `curl-impersonate`) and an NY Open Legislation API key to satisfy hard rule #1 from CI.
+
+**Pick up here:** Day 3 — seed-case authoring for Categories B (factual recall), C (refusal/escalation), D (eligibility edge cases), and G (citation/grounding) per the day-by-day below. These seeds become the inputs to the Days 4–7 synthetic-expansion pipeline. Each new tab in the [authoring sheet](https://docs.google.com/spreadsheets/d/1CV7O8qHMTYQVFHCVFkWIE_zeDsFIyUDovCDLCHPmAcc/edit) needs first-time setup (header row in row 1) per [`eval/cases/README.md`](../eval/cases/README.md#first-time-sheet-setup-one-off) before authoring; the Day-2 export already validated that workflow end-to-end. Day-2 stretch goal **not yet done**: first Promptfoo run against bare Claude Sonnet 4.5 to establish the Category-A floor. Roll into Day 3 or sequence as Day 3 prerequisite.
+
+Open Day-1 items still pending (drafts ready at [`docs/outreach/`](outreach/)): SME-reviewer outreach send (target end of Day 3 to keep the Days-4–7 SME-review window) and the NYC Benefits Screening API account request submission (Days-8–10 prerequisite; lead time unknown).
 
 ## Thesis
 
@@ -55,10 +61,10 @@ Settled per ADR-006. Approximate case counts in parens.
 - [ ] Create public GitHub repo — deferred to Day 14 per the polish-and-publish sequence
 
 ### Day 2 — Author the MyCity replay set (Category A)
-- [ ] Pull every documented prompt from The Markup's March 2024 and April 2024 articles, plus AP and Entrepreneur follow-ups
-- [ ] For each, write: the prompt, the source URL, the actual statute citation, the expected behavior, the hard-fail conditions
-- [ ] All 13–15 cases authored in the Google Sheet
-- [ ] First Promptfoo run against bare Claude Sonnet 4.5 — establishes the floor
+- [x] Pull every documented prompt from The Markup's March 2024 and April 2024 articles, plus AP and Entrepreneur follow-ups (13 verbatim from r2 §4 + 2 paraphrases on the Section-8 stochastic-inconsistency case and the food-adulteration highest-harm case)
+- [x] For each, write: the prompt, the source URL, the actual statute citation, the expected behavior, the hard-fail conditions (refusal-and-redirect framing per ADR-003 + ADR-008 §4; framing decisions and per-case harm rationale recorded in [`docs/handoffs/day-2-category-a-authoring-notes.md`](handoffs/day-2-category-a-authoring-notes.md))
+- [x] All 15 cases authored in the Google Sheet and exported to [`eval/cases/A_mycity_replay.csv`](../eval/cases/A_mycity_replay.csv)
+- [ ] First Promptfoo run against bare Claude Sonnet 4.5 — establishes the floor *(Day-2 stretch; rolled to Day 3 prerequisite)*
 
 ### Day 3 — Seed cases for B, C, D, G
 - [ ] 3–4 hand-written factual recall cases pinned to specific 7 CFR sections
