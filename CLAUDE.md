@@ -6,6 +6,8 @@ Operating manual for Claude Code on this repository. Read this first, every sess
 
 A statute-grounded evaluation suite for caseworker-facing SNAP benefits-navigation AI in New York, plus a narrow reference implementation. The artifact is meant to look like an Anthropic research release — published grader, validated judge, honest limitations, generous credit, clear scope. The audience is a hiring manager on Anthropic's Beneficial Deployments team.
 
+The system the eval is anchored to — NYC's MyCity chatbot — was discontinued by the Mamdani administration on 2026-02-05. Category A is therefore a post-mortem regression set rather than a live A/B comparator; see [ADR-008](docs/decisions/ADR-008-post-obbba-post-mycity-amendments.md) §4. The eval's value is reinforced by the shutdown, not undercut by it — the new administration's decision is consistent with the project's thesis that a measurable bar should have been applied before deployment.
+
 ## The single most important thing
 
 **This is an illustrative suite, not a benchmark.** Approximately seventy cases across seven categories, scoped to one program in one jurisdiction at one point in time. Every design choice should serve that scope. If a decision would push us toward "comprehensive coverage of all SNAP eligibility," push back — that's not what we're building. We are demonstrating a way of thinking about responsible evaluation, with a working implementation as proof the eval is well-formed.
@@ -51,7 +53,8 @@ These do not bend. If a request would violate one, push back before acting.
   - `docs/research/r1-nyc-poverty-and-benefits-infrastructure.md` — the demographic and infrastructure context for why this work matters
   - `docs/research/r2-eval-methodology-and-mycity-postmortem.md` — Anthropic publication template, public-sector eval gold standards, MyCity post-mortem
   - `docs/research/r3-propel-positioning-synthetic-data-voice.md` — Propel deep-dive, caseworker vs. applicant positioning, synthetic data methodology, Anthropic voice study
-  - `docs/research/r4-corpus-access-verification.md` — which policy sources are accessible and how
+  - `docs/research/r4-corpus-access-verification.md` — which policy sources are accessible and how (partially superseded by r5)
+  - `docs/research/r5-freshness-audit-2026-05-11.md` — point-in-time re-audit at Day-1 corpus pull; records the MyCity shutdown, OBBBA-era statute changes, and two factual corrections to ADR-005/r4
 - **Code:** `eval/`, `demo/`, `scripts/` — see the README for the directory tour.
 
 ## Default tool choices

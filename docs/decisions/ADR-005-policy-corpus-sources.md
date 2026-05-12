@@ -1,8 +1,10 @@
 # ADR-005: Policy corpus sources and exclusions
 
-**Status:** Accepted
+**Status:** Accepted; amended by [ADR-008](./ADR-008-post-obbba-post-mycity-amendments.md) (2026-05-11)
 **Date:** 2026-05-11
 **Decision-makers:** [project lead]
+
+> ADR-008 corrects two factual claims in this ADR: the SNAP Source Book pin is the **September 2025** revision (not July 2025), and the NYC Benefits Screening API **requires Bearer-token authentication** (not "open without auth" as recorded below). ADR-008 also expands the state-level corpus to include OTDA GIS messages and reframes Category A as a post-mortem regression set after the MyCity chatbot was discontinued on 2026-02-05. The original text below is retained as the historical record.
 
 ## Context
 

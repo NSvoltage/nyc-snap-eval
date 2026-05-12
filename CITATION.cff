@@ -8,12 +8,12 @@ abstract: >-
   rubric and a narrow reference implementation. Scoped to caseworker-facing
   deployment for SNAP in New York at a stated point in time.
 authors:
-  - given-names: "[Your Name]"
-    family-names: "[Your Surname]"
+  - given-names: "[Naman Sharma]"
+    
 type: software
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
-repository-code: "https://github.com/[your-handle]/nyc-snap-eval"
+repository-code: "https://github.com/[NSvoltage]/nyc-snap-eval"
 keywords:
   - evaluation
   - large language models

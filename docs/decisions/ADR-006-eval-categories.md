@@ -1,8 +1,10 @@
 # ADR-006: The seven eval categories
 
-**Status:** Accepted
+**Status:** Accepted; framing amended by [ADR-008](./ADR-008-post-obbba-post-mycity-amendments.md) (2026-05-11)
 **Date:** 2026-05-11
 **Decision-makers:** [project lead]
+
+> ADR-008 §4 reframes Category A as a **post-mortem regression set** for the MyCity chatbot, which the Mamdani administration discontinued on 2026-02-05. The case-authoring methodology is unchanged — cases are still anchored to The Markup's documented prompts and the statutes MyCity got wrong — but the methodology PDF should describe Category A as testing behavior on the prompts that exposed MyCity's failure modes, not as a live A/B against the deployed system. Separately, the Category B reference below to the "July 2025" NYS OTDA SNAP Source Book is corrected to the **September 2025** revision; see ADR-008 §1.
 
 ## Context
 

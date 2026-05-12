@@ -2,9 +2,21 @@
 
 The v2 build plan, distilled. Day-by-day sequencing for the two-week build.
 
+## Where we are (updated 2026-05-11)
+
+**Day 1 is complete.** Corpus is pulled and pinned. Promptfoo config validates. Day-1 freshness audit ([`r5`](research/r5-freshness-audit-2026-05-11.md)) and [ADR-008](decisions/ADR-008-post-obbba-post-mycity-amendments.md) record the substantive changes since the plan was first written:
+
+- MyCity chatbot was discontinued by the Mamdani administration on 2026-02-05 → Category A is a post-mortem regression set.
+- The One Big Beautiful Bill Act of 2025-07-04 reshaped federal SNAP statute, but 7 CFR Part 273 has not been amended since 2025-01-17 → cases that hinge on post-OBBBA rules must cite the statute and state guidance, not federal regulations alone.
+- The NYS OTDA SNAP Source Book on disk is the **September 2025** revision (not July 2025 as originally pinned). OTDA GIS messages 25DC024, 25DC055, 25DC056, 25DC059, 25DC081 are also in the corpus; 26DC007 is a follow-up.
+- The NYC Benefits Screening API **requires Bearer-token authentication**. A registered account is a Days-8–10 prerequisite.
+- The `otda.ny.gov` origin was unreachable from the pulling network; SNAPSB and GIS messages were Wayback-served. Byte-comparison against the origin is a corpus-refresh hygiene item.
+
+**Pick up here:** Day 2 — author the Category A (MyCity replay) case set. Open [`docs/research/r2-eval-methodology-and-mycity-postmortem.md`](research/r2-eval-methodology-and-mycity-postmortem.md) for the documented prompts and statute citations; populate `eval/cases/A_mycity_replay.csv` using the schema in [`docs/conventions.md` §2](conventions.md). Also pending from Day 1: SME-reviewer outreach email; see the open items below in the Day-1 checklist.
+
 ## Thesis
 
-The MyCity chatbot failed because there was no published, statute-grounded, measurable bar that the system was held to before it shipped. This project demonstrates what such a bar looks like for one program (SNAP) in one jurisdiction (New York) at one point in time, on one deployment surface (caseworker-facing). Approximately seventy cases across seven categories, a published grader, a validated judge, and a narrow reference implementation that runs against the same suite.
+The MyCity chatbot failed because there was no published, statute-grounded, measurable bar that the system was held to before it shipped. Mayor Mamdani took office on 2026-01-01 and discontinued MyCity on 2026-02-05, citing operating cost and the documented failure modes The Markup and THE CITY had reported. This project demonstrates what a bar of that shape looks like for one program (SNAP) in one jurisdiction (New York) at one point in time, on one deployment surface (caseworker-facing). Approximately seventy cases across seven categories, a published grader, a validated judge, and a narrow reference implementation that runs against the same suite. With MyCity offline, Category A is a post-mortem regression set rather than a live A/B (per ADR-008 §4); the rest of the methodology is unaffected.
 
 ## Deliverables
 
@@ -22,7 +34,7 @@ The MyCity chatbot failed because there was no published, statute-grounded, meas
 Settled per ADR-006. Approximate case counts in parens.
 
 - **A. MyCity replay** (~15) — known-failure regression set, anchored to The Markup's documented prompts and the specific statutes the MyCity bot got wrong. Stochastic-consistency metric: N=10 per case to detect run-to-run instability.
-- **B. Policy-grounded factual recall** (~15) — anchored to 7 CFR Part 273 and the July 2025 NYS OTDA SNAP Source Book.
+- **B. Policy-grounded factual recall** (~15) — anchored to 7 CFR Part 273 (latest amendment 2025-01-17, pre-OBBBA), the September 2025 NYS OTDA SNAP Source Book (post-OBBBA), and OTDA GIS message 25DC055 (OBBBA summary). Cases that hinge on post-OBBBA SNAP rules must cite the statute and state guidance, not federal regulations alone (see ADR-008 §3).
 - **C. Refusal and escalation** (~8) — calibration on legal-advice-shaped requests. Tests both under-refusal (giving advice we shouldn't) and over-refusal (gating on legitimate questions).
 - **D. Eligibility edge cases** (~12) — mixed-status families, ABAWD work requirements, formerly incarcerated, elderly LEP, gig income, students, fleeing-felon rules.
 - **E. Adversarial inputs** (~8) — prompt injection, persona attacks, many-shot patterns. Only public attack patterns; no novel jailbreaks.
@@ -32,13 +44,15 @@ Settled per ADR-006. Approximate case counts in parens.
 ## Day-by-day sequencing
 
 ### Day 1 — Repo scaffold and corpus pull
-- [ ] Create public GitHub repo with the structure already scaffolded here
-- [ ] Wire up Promptfoo with `promptfooconfig.yaml` pointing at the case sheet
-- [ ] Pull 7 CFR Part 273 from the eCFR API, pin to a stated revision date, save JSON to `data/policy_corpus/federal/`
-- [ ] Download `otda.ny.gov/programs/snap/SNAPSB.pdf` (July 2025), save with `meta.yaml` noting revision date
-- [ ] Hit the NYC Benefits Screening API with curl against a synthetic household; confirm it responds without auth
-- [ ] Scrape NYC HRA public SNAP guidance pages to `data/policy_corpus/nyc/`
+- [x] Wire up Promptfoo with `promptfooconfig.yaml` (validated; CSV paths point at `eval/cases/`)
+- [x] Pull 7 CFR Part 273 from the eCFR API; pinned to 2026-05-08 snapshot (latest Part 273 amendment 2025-01-17, pre-OBBBA — see ADR-008 §3)
+- [x] Pull the September 2025 NYS OTDA SNAP Source Book to `data/policy_corpus/state/otda-snap-source-book/` (Wayback fallback used because OTDA origin was unreachable from this network — see ADR-008 §5)
+- [x] Pull OTDA GIS messages 25DC024, 25DC055, 25DC056, 25DC059, 25DC081 to `data/policy_corpus/state/otda-gis/` (26DC007 unavailable in Wayback at retrieval; tracked as a follow-up)
+- [x] Smoke-test the NYC Benefits Screening API; OpenAPI spec saved and auth requirement documented in `data/policy_corpus/nyc/benefits-screening-api/meta.yaml`. Endpoint **requires** Bearer-token auth — see ADR-008 §2.
+- [x] Scrape 10 NYC HRA public SNAP guidance pages to `data/policy_corpus/nyc/hra-public-pages/`
+- [x] Conduct a freshness audit; record findings in `docs/research/r5-freshness-audit-2026-05-11.md` and decisions in ADR-008
 - [ ] Send one outreach email to find an SME reviewer (Legal Aid, LSNY, or a benefits navigator at Single Stop / Hispanic Federation)
+- [ ] Create public GitHub repo — deferred to Day 14 per the polish-and-publish sequence
 
 ### Day 2 — Author the MyCity replay set (Category A)
 - [ ] Pull every documented prompt from The Markup's March 2024 and April 2024 articles, plus AP and Entrepreneur follow-ups

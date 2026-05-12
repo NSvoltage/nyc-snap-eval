@@ -1,5 +1,7 @@
 # Research Report 4 — Corpus access verification
 
+> **Superseded in part by [r5](r5-freshness-audit-2026-05-11.md) (2026-05-11).** Two factual claims below were corrected by the Day-1 corpus pull: the NYS OTDA SNAP Source Book is now the **September 2025** revision (not July 2025), and the NYC Benefits Screening API **requires Bearer-token authentication** (not "open without auth" as recorded below). r5 also records the discontinuation of the MyCity chatbot and the post-OBBBA statutory landscape. The corrections are formalized in [ADR-008](../decisions/ADR-008-post-obbba-post-mycity-amendments.md). The original text is retained below as the historical record.
+
 A verification audit of the policy sources the eval suite and reference implementation depend on. Conducted on 2026-05-11.
 
 ## Summary

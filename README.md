@@ -23,13 +23,24 @@ eval/
   results/                  — per-run results with confidence intervals
 
 demo/                       — narrow reference implementation (Next.js + Claude Sonnet 4.5)
-data/policy_corpus/         — pinned federal and state SNAP policy documents
+data/policy_corpus/
+  federal/7-cfr-273/        — eCFR API snapshot of 7 CFR Part 273
+  state/otda-snap-source-book/  — NYS OTDA SNAP Source Book, Sept 2025
+  state/otda-gis/           — OTDA GIS guidance memoranda (per ADR-008)
+  nyc/hra-public-pages/     — scraped public HRA SNAP pages
+  nyc/benefits-screening-api/   — OpenAPI spec + synthetic-household probe responses
+scripts/                    — corpus pull/scrape utilities (Python 3.11, uv-managed)
 docs/
   project-plan.md           — the v2 build plan
   conventions.md            — code style, file layout, naming, voice
-  research/                 — upstream research reports
-  decisions/                — architecture decision records
+  research/                 — upstream research reports (r1–r5)
+  decisions/                — architecture decision records (ADR-001–ADR-008)
+pyproject.toml              — uv-managed Python deps (httpx, pypdf, beautifulsoup4, pyyaml, ruff, pytest)
 ```
+
+## Current state
+
+Day 1 of the project plan is complete. The policy corpus is pulled and pinned; the freshness audit in [`docs/research/r5-freshness-audit-2026-05-11.md`](docs/research/r5-freshness-audit-2026-05-11.md) and the resulting amendments in [ADR-008](docs/decisions/ADR-008-post-obbba-post-mycity-amendments.md) record the substantive changes since the original plan was written (the MyCity chatbot was discontinued on 2026-02-05; the One Big Beautiful Bill Act of 2025-07-04 reshaped SNAP statute; two factual errors in ADR-005 were surfaced and corrected). Day 2 — authoring the Category A (MyCity replay) case set — is the next step. See [`docs/project-plan.md`](docs/project-plan.md) for the day-by-day sequence and the "Where we are" pointer at the top.
 
 ## Running the eval
 
@@ -40,7 +51,7 @@ docs/
 The suite is calibrated to SNAP policy structure (federal–state–county layering, expedited service rules, categorical eligibility) and to the caseworker-facing task. Several constraints are documented and intentional:
 
 - **Single program, single jurisdiction.** SNAP in New York. We expect the structural elements — paired-prompt evaluation across policy interpretations, refusal calibration on under-specified facts, citation-grounding checks — to transfer to other means-tested programs, but we have not tested this transfer.
-- **Single point in time.** Cases are pinned to specific revisions of 7 CFR Part 273 and the July 2025 NYS OTDA SNAP Source Book. Re-validation is required when regulations change.
+- **Single point in time.** Cases are pinned to specific revisions of 7 CFR Part 273 (last amended 2025-01-17, pre-OBBBA) and the September 2025 NYS OTDA SNAP Source Book (post-OBBBA). Re-validation is required when regulations or statute change. See [ADR-008](docs/decisions/ADR-008-post-obbba-post-mycity-amendments.md) for the corpus pins and the federal-regulations-vs-statute gap.
 - **NYC HRA Policy Directives and Policy Bulletins are out of scope.** These are not publicly published as a canonical corpus. Cases whose correct answer turns on city-specific HRA guidance are deferred to future work.
 - **Small SME pool.** Cases requiring expert review are validated by one or two reviewers with state-SNAP-administration or benefits-navigation experience. Inter-rater disagreement is reported per case.
 - **Simulated baseline.** Where we report a comparison against a "poorly-scaffolded baseline," we are simulating a configuration consistent with publicly documented failure patterns, not reproducing any specific deployed system.

@@ -20,6 +20,7 @@ ADRs are immutable once accepted. If a decision changes, write a new ADR that su
 - [ADR-005](./ADR-005-policy-corpus-sources.md) — Policy corpus sources and exclusions
 - [ADR-006](./ADR-006-eval-categories.md) — The seven eval categories
 - [ADR-007](./ADR-007-judge-model-and-meta-prompt.md) — Judge model and meta-prompt discipline
+- [ADR-008](./ADR-008-post-obbba-post-mycity-amendments.md) — Post-OBBBA, post-MyCity amendments to ADR-005 and project framing
 
 ## Template
 
