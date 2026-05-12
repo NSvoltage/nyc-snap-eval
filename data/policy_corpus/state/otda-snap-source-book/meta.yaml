@@ -1,0 +1,18 @@
+source:
+  name: NYS OTDA SNAP Source Book
+  canonical_url: https://otda.ny.gov/programs/snap/SNAPSB.pdf
+  fetched_from: https://web.archive.org/web/2025/https://otda.ny.gov/programs/snap/SNAPSB.pdf
+license: public (NYS government document)
+revision_label_on_cover: Sept 2025
+retrieval_date: '2026-05-11'
+retrieval_method: httpx GET; fallback to Wayback Machine if OTDA origin unreachable.
+revision_confirmation_url: https://www.otda.ny.gov/policy/gis/2025/25DC056.pdf
+notes: 'Text extracted with pypdf. The Source Book cross-references each section to
+  both 18 NYCRR Part 387 and the corresponding 7 CFR sections, which makes the federal-state
+  citation chain explicit. See ADR-005.
+
+  NOTE: The OTDA origin (https://otda.ny.gov/programs/snap/SNAPSB.pdf) was unreachable
+  from the pulling network (connection reset at TLS layer). This artifact was fetched
+  from the Wayback Machine snapshot at https://web.archive.org/web/2025/https://otda.ny.gov/programs/snap/SNAPSB.pdf;
+  the snapshot''s x-archive-orig-last-modified header was 2025-09-24. Re-pull from
+  the OTDA origin when network access permits, and verify byte-equality.'

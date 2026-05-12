@@ -1,0 +1,10 @@
+source:
+  name: 7 CFR Part 273 — Certification of Eligible Households
+  url: https://www.ecfr.gov/current/title-7/subtitle-B/chapter-II/subchapter-C/part-273
+license: public domain
+revision_date: '2025-01-17'
+retrieval_date: '2026-05-11'
+retrieval_method: eCFR REST API v1; GET /api/versioner/v1/full/{date}/title-7.xml?part=273
+notes: Pulled via the eCFR API. 'revision_date' is the most recent amendment date
+  reported by /versioner/v1/versions for Part 273 at retrieval time. See ADR-005 for
+  source-selection rationale.

@@ -1,0 +1,101 @@
+source:
+  name: NYC HRA public SNAP guidance
+  scope: Public-facing HRA SNAP pages reachable from /site/hra/help/snap-benefits-food-program.page
+license: public (NYC government website)
+retrieval_date: '2026-05-11'
+retrieval_method: httpx GET with a browser User-Agent; HTML parsed with BeautifulSoup;
+  URL set discovered by following internal links from the main SNAP page.
+excluded_from_corpus: HRA Policy Directives and Policy Bulletins are NOT canonically
+  published on nyc.gov and are excluded from v1 per ADR-005.
+page_count: 10
+pages:
+- url: https://www.nyc.gov/site/hra/help/snap-benefits-food-program.page
+  final_url: https://www.nyc.gov/site/hra/help/snap-benefits-food-program.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 29604
+  last_modified: null
+  etag: null
+  sha256: 4715717663822b5b463547b0bb710fde4fd0e725d6a2260b1de589934c82422e
+  slug: snap-benefits-food-program
+- url: https://www.nyc.gov/site/hra/help/snap-faq.page
+  final_url: https://www.nyc.gov/site/hra/help/snap-faq.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 32856
+  last_modified: null
+  etag: null
+  sha256: 139592db3f26760083ffd0adb811c8f746064bf5123b06224d794f733d80bdf5
+  slug: snap-faq
+- url: https://www.nyc.gov/site/hra/help/snap-application-frequently-asked-questions.page
+  final_url: https://www.nyc.gov/site/hra/help/snap-application-frequently-asked-questions.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 56586
+  last_modified: null
+  etag: null
+  sha256: 144ab9304cc4b132706a4cc4d4a66e96817c8d42c8e687840ea17b095c7aa6db
+  slug: snap-application-frequently-asked-questions
+- url: https://www.nyc.gov/site/hra/help/snap-nondiscrimination.page
+  final_url: https://www.nyc.gov/site/hra/help/snap-nondiscrimination.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 20713
+  last_modified: null
+  etag: null
+  sha256: 96b07659d0ef826cd98c92b113e39c641f028c528ce4a9724250bbc12dae4fd8
+  slug: snap-nondiscrimination
+- url: https://www.nyc.gov/site/hra/help/able-bodied-adults-without-dependents.page
+  final_url: https://www.nyc.gov/site/hra/help/able-bodied-adults-without-dependents.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 35469
+  last_modified: null
+  etag: null
+  sha256: 87b7f2678f3a1c3047866bf8f33a0fec97630194796659b6fe16a9b2d96c9173
+  slug: able-bodied-adults-without-dependents
+- url: https://www.nyc.gov/site/hra/help/access-hra-resources.page
+  final_url: https://www.nyc.gov/site/hra/help/access-hra-resources.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 30315
+  last_modified: null
+  etag: null
+  sha256: 1e71c1d46aa5c68b07fbbde67d1ae67ad5e3099333624e3cd81547fc583fc370
+  slug: access-hra-resources
+- url: https://www.nyc.gov/site/hra/help/food-assistance.page
+  final_url: https://www.nyc.gov/site/hra/help/food-assistance.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 22996
+  last_modified: null
+  etag: null
+  sha256: e52f26685b706401cfbf152a378873d0cd16a2af69fe567f7995df8ebd281027
+  slug: food-assistance
+- url: https://www.nyc.gov/site/hra/help/ebt-card-services.page
+  final_url: https://www.nyc.gov/site/hra/help/ebt-card-services.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 25026
+  last_modified: null
+  etag: null
+  sha256: dc1762f8f24d60882219f85becae5a39d56bdc09e93671a298e39e9e363fca32
+  slug: ebt-card-services
+- url: https://www.nyc.gov/site/hra/help/benefitreplacement.page
+  final_url: https://www.nyc.gov/site/hra/help/benefitreplacement.page
+  status: 200
+  content_type: text/html;charset=UTF-8
+  content_length: 35236
+  last_modified: null
+  etag: null
+  sha256: 1feef7a5d0cde632224fa2deb32b07ce2c9ec678d5a8627110840e49bed476f8
+  slug: benefitreplacement
+- url: https://www.nyc.gov/assets/hra/downloads/pdf/services/snap/snap_need_to_know.pdf
+  final_url: https://www.nyc.gov/assets/hra/downloads/pdf/services/snap/snap_need_to_know.pdf
+  status: 200
+  content_type: application/pdf
+  content_length: 426529
+  last_modified: Wed, 01 Apr 2026 14:21:40 GMT
+  etag: '"69cd29f4-68221"'
+  sha256: 50a43777a774da2ebdfaa2eea5ae2b391ebda251d257401b9c640a9547cb16e7
+  slug: snap_need_to_know

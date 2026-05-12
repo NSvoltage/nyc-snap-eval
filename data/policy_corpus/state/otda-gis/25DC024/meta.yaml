@@ -1,0 +1,20 @@
+source:
+  name: NYS OTDA GIS message 25DC024
+  canonical_url: https://otda.ny.gov/policy/gis/2025/25DC024.pdf
+  fetched_from: https://web.archive.org/web/2026/https://otda.ny.gov/policy/gis/2025/25DC024.pdf
+  kind: gis
+license: public (NYS government document)
+retrieval_date: '2026-05-11'
+retrieval_method: httpx GET; fallback to Wayback Machine if OTDA origin unreachable.
+page_count: 3
+extracted_char_count: 4228
+notes: 'Title: 2025-2026 SNAP Income Guidelines
+
+  OTDA GIS (General Information System) message. GIS messages are operational guidance
+  memoranda issued between Source Book revisions and are part of the public state-level
+  corpus per ADR-008.
+
+  NOTE: The OTDA origin (https://otda.ny.gov/policy/gis/2025/25DC024.pdf) was unreachable
+  from the pulling network. This artifact was fetched from the Wayback Machine snapshot
+  at https://web.archive.org/web/2026/https://otda.ny.gov/policy/gis/2025/25DC024.pdf.
+  Re-pull from the OTDA origin when network access permits, and verify byte-equality.'

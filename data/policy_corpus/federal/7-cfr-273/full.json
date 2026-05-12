@@ -1,0 +1,551 @@
+{
+  "identifier": "273",
+  "label": "Part 273—Certification of Eligible Households",
+  "label_level": "Part 273",
+  "label_description": "Certification of Eligible Households",
+  "reserved": false,
+  "type": "part",
+  "volumes": [
+    "4"
+  ],
+  "size": 888861,
+  "children": [
+    {
+      "identifier": "A",
+      "label": "Subpart A—General Rules",
+      "label_level": "Subpart A",
+      "label_description": "General Rules",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 174491,
+      "children": [
+        {
+          "identifier": "273.1",
+          "label": "§ 273.1 Household concept.",
+          "label_level": "§ 273.1",
+          "label_description": "Household concept.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2023-03-29T21:40:16-0400",
+          "size": 14492
+        },
+        {
+          "identifier": "273.2",
+          "label": "§ 273.2 Office operations and application processing.",
+          "label_level": "§ 273.2",
+          "label_description": "Office operations and application processing.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2026-02-10T17:10:05-0500",
+          "size": 159999
+        }
+      ],
+      "descendant_range": "273.1 – 273.2"
+    },
+    {
+      "identifier": "B",
+      "label": "Subpart B—Residency and Citizenship",
+      "label_level": "Subpart B",
+      "label_description": "Residency and Citizenship",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 25878,
+      "children": [
+        {
+          "identifier": "273.3",
+          "label": "§ 273.3 Residency.",
+          "label_level": "§ 273.3",
+          "label_description": "Residency.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-01-07T00:00:00-0500",
+          "size": 2173
+        },
+        {
+          "identifier": "273.4",
+          "label": "§ 273.4 Citizenship and alien status.",
+          "label_level": "§ 273.4",
+          "label_description": "Citizenship and alien status.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2023-03-29T21:40:16-0400",
+          "size": 23705
+        }
+      ],
+      "descendant_range": "273.3 – 273.4"
+    },
+    {
+      "identifier": "C",
+      "label": "Subpart C—Education and Employment",
+      "label_level": "Subpart C",
+      "label_description": "Education and Employment",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 167134,
+      "children": [
+        {
+          "identifier": "273.5",
+          "label": "§ 273.5 Students.",
+          "label_level": "§ 273.5",
+          "label_description": "Students.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2019-06-19T03:30:05-0400",
+          "size": 7305
+        },
+        {
+          "identifier": "273.6",
+          "label": "§ 273.6 Social security numbers.",
+          "label_level": "§ 273.6",
+          "label_description": "Social security numbers.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 6491
+        },
+        {
+          "identifier": "273.7",
+          "label": "§ 273.7 Work provisions.",
+          "label_level": "§ 273.7",
+          "label_description": "Work provisions.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2025-01-21T19:55:09-0500",
+          "size": 153338
+        }
+      ],
+      "descendant_range": "273.5 – 273.7"
+    },
+    {
+      "identifier": "D",
+      "label": "Subpart D—Eligibility and Benefit Levels",
+      "label_level": "Subpart D",
+      "label_description": "Eligibility and Benefit Levels",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 214874,
+      "children": [
+        {
+          "identifier": "273.8",
+          "label": "§ 273.8 Resource eligibility standards.",
+          "label_level": "§ 273.8",
+          "label_description": "Resource eligibility standards.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2024-06-07T18:30:12-0400",
+          "size": 29170
+        },
+        {
+          "identifier": "273.9",
+          "label": "§ 273.9 Income and deductions.",
+          "label_level": "§ 273.9",
+          "label_description": "Income and deductions.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2025-01-21T19:55:09-0500",
+          "size": 58898
+        },
+        {
+          "identifier": "273.10",
+          "label": "§ 273.10 Determining household eligibility and benefit levels.",
+          "label_level": "§ 273.10",
+          "label_description": "Determining household eligibility and benefit levels.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2025-01-21T19:55:09-0500",
+          "size": 53828
+        },
+        {
+          "identifier": "273.11",
+          "label": "§ 273.11 Action on households with special circumstances.",
+          "label_level": "§ 273.11",
+          "label_description": "Action on households with special circumstances.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2023-03-29T21:40:16-0400",
+          "size": 72978
+        }
+      ],
+      "descendant_range": "273.8 – 273.11"
+    },
+    {
+      "identifier": "E",
+      "label": "Subpart E—Continuing Participation",
+      "label_level": "Subpart E",
+      "label_description": "Continuing Participation",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 78471,
+      "children": [
+        {
+          "identifier": "273.12",
+          "label": "§ 273.12 Reporting requirements.",
+          "label_level": "§ 273.12",
+          "label_description": "Reporting requirements.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2022-12-07T20:50:22-0500",
+          "size": 57144
+        },
+        {
+          "identifier": "273.13",
+          "label": "§ 273.13 Notice of adverse action.",
+          "label_level": "§ 273.13",
+          "label_description": "Notice of adverse action.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2022-12-07T20:50:22-0500",
+          "size": 9115
+        },
+        {
+          "identifier": "273.14",
+          "label": "§ 273.14 Recertification.",
+          "label_level": "§ 273.14",
+          "label_description": "Recertification.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2023-03-29T21:40:16-0400",
+          "size": 12212
+        }
+      ],
+      "descendant_range": "273.12 – 273.14"
+    },
+    {
+      "identifier": "F",
+      "label": "Subpart F—Disqualification and Claims",
+      "label_level": "Subpart F",
+      "label_description": "Disqualification and Claims",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 122100,
+      "children": [
+        {
+          "identifier": "273.15",
+          "label": "§ 273.15 Fair hearings.",
+          "label_level": "§ 273.15",
+          "label_description": "Fair hearings.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2023-03-29T21:40:16-0400",
+          "size": 26889
+        },
+        {
+          "identifier": "273.16",
+          "label": "§ 273.16 Disqualification for intentional Program violation.",
+          "label_level": "§ 273.16",
+          "label_description": "Disqualification for intentional Program violation.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 46243
+        },
+        {
+          "identifier": "273.17",
+          "label": "§ 273.17 Restoration of lost benefits.",
+          "label_level": "§ 273.17",
+          "label_description": "Restoration of lost benefits.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-01-07T00:00:00-0500",
+          "size": 10539
+        },
+        {
+          "identifier": "273.18",
+          "label": "§ 273.18 Claims against households.",
+          "label_level": "§ 273.18",
+          "label_description": "Claims against households.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2024-06-07T18:30:12-0400",
+          "size": 38211
+        },
+        {
+          "identifier": "273.19",
+          "label": "§ 273.19 [Reserved]",
+          "label_level": "§ 273.19",
+          "label_description": "§ 273.19 [Reserved]",
+          "reserved": true,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-01-07T00:00:00-0500",
+          "size": 218
+        }
+      ],
+      "descendant_range": "273.15 – 273.19"
+    },
+    {
+      "identifier": "G",
+      "label": "Subpart G—Program Alternatives",
+      "label_level": "Subpart G",
+      "label_description": "Program Alternatives",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 89019,
+      "children": [
+        {
+          "identifier": "273.20",
+          "label": "§ 273.20 SSI cash-out.",
+          "label_level": "§ 273.20",
+          "label_description": "SSI cash-out.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 1862
+        },
+        {
+          "identifier": "273.21",
+          "label": "§ 273.21 Monthly Reporting and Retrospective Budgeting (MRRB).",
+          "label_level": "§ 273.21",
+          "label_description": "Monthly Reporting and Retrospective Budgeting (MRRB).",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2023-03-29T21:40:16-0400",
+          "size": 43073
+        },
+        {
+          "identifier": "273.22",
+          "label": "§ 273.22 [Reserved]",
+          "label_level": "§ 273.22",
+          "label_description": "§ 273.22 [Reserved]",
+          "reserved": true,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-01-07T00:00:00-0500",
+          "size": 218
+        },
+        {
+          "identifier": "273.23",
+          "label": "§ 273.23 Simplified application and standardized benefit projects.",
+          "label_level": "§ 273.23",
+          "label_description": "Simplified application and standardized benefit projects.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2019-05-01T20:00:06-0400",
+          "size": 15412
+        },
+        {
+          "identifier": "273.24",
+          "label": "§ 273.24 Time limit for able-bodied adults.",
+          "label_level": "§ 273.24",
+          "label_description": "Time limit for able-bodied adults.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2025-01-21T19:55:09-0500",
+          "size": 23005
+        },
+        {
+          "identifier": "273.25",
+          "label": "§ 273.25 Simplified SNAP.",
+          "label_level": "§ 273.25",
+          "label_description": "Simplified SNAP.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2019-05-01T20:00:06-0400",
+          "size": 5449
+        }
+      ],
+      "descendant_range": "273.20 – 273.25"
+    },
+    {
+      "identifier": "H",
+      "label": "Subpart H—The Transitional Benefits Alternative",
+      "label_level": "Subpart H",
+      "label_description": "The Transitional Benefits Alternative",
+      "reserved": false,
+      "type": "subpart",
+      "volumes": [
+        "4"
+      ],
+      "size": 16894,
+      "children": [
+        {
+          "identifier": "273.26",
+          "label": "§ 273.26 General eligibility guidelines.",
+          "label_level": "§ 273.26",
+          "label_description": "General eligibility guidelines.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 4695
+        },
+        {
+          "identifier": "273.27",
+          "label": "§ 273.27 General administrative guidelines.",
+          "label_level": "§ 273.27",
+          "label_description": "General administrative guidelines.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 2684
+        },
+        {
+          "identifier": "273.28",
+          "label": "§ 273.28 Application for SNAP recertification.",
+          "label_level": "§ 273.28",
+          "label_description": "Application for SNAP recertification.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 3967
+        },
+        {
+          "identifier": "273.29",
+          "label": "§ 273.29 Transitional notice requirements.",
+          "label_level": "§ 273.29",
+          "label_description": "Transitional notice requirements.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 2317
+        },
+        {
+          "identifier": "273.30",
+          "label": "§ 273.30 Transitional benefit alternative change reporting requirements.",
+          "label_level": "§ 273.30",
+          "label_description": "Transitional benefit alternative change reporting requirements.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-01-07T00:00:00-0500",
+          "size": 952
+        },
+        {
+          "identifier": "273.31",
+          "label": "§ 273.31 Closing the transitional period.",
+          "label_level": "§ 273.31",
+          "label_description": "Closing the transitional period.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-01-07T00:00:00-0500",
+          "size": 1241
+        },
+        {
+          "identifier": "273.32",
+          "label": "§ 273.32 Households that return to TANF, MOE, or SFCA program during the transitional period.",
+          "label_level": "§ 273.32",
+          "label_description": "Households that return to TANF, MOE, or SFCA program during the transitional period.",
+          "reserved": false,
+          "type": "section",
+          "volumes": [
+            "4"
+          ],
+          "received_on": "2017-05-10T01:00:00-0400",
+          "size": 1038
+        }
+      ],
+      "descendant_range": "273.26 – 273.32"
+    }
+  ],
+  "descendant_range": "273.1 – 273.32"
+}

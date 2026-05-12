@@ -1,0 +1,34 @@
+source:
+  name: NYC Benefits Screening API
+  docs_url: https://screeningapidocs.cityofnewyork.us
+  openapi_spec_source: https://raw.githubusercontent.com/CityOfNewYork/screeningapi-docs/main/dist/resources/benefits_screening_api.yaml
+  servers:
+    - https://sandbox.screeningapi.cityofnewyork.us
+    - https://screeningapi.cityofnewyork.us
+license: open / public (NYC government API documentation; underlying rules engine open-source at https://github.com/NYCOpportunity/ACCESS-NYC-Rules)
+retrieval_date: '2026-05-11'
+retrieval_method: |
+  OpenAPI spec fetched from the public GitHub source repo
+  (CityOfNewYork/screeningapi-docs/dist/resources/benefits_screening_api.yaml).
+  Live endpoints smoke-tested with POST /eligibilityPrograms against both servers
+  with a composite synthetic household; both returned HTTP 401 Unauthorized as expected.
+
+auth_finding: |
+  IMPORTANT: ADR-005 and docs/research/r4-corpus-access-verification.md both state
+  "Auth required: None for basic use." The OpenAPI spec contradicts this. The
+  /eligibilityPrograms endpoint declares `security: [ApiKeyAuth]` and requires an
+  Authorization header carrying a Bearer token obtained from POST /authToken with
+  registered username/password credentials. Smoke tests on 2026-05-11 confirmed
+  HTTP 401 on both sandbox.screeningapi.cityofnewyork.us and
+  screeningapi.cityofnewyork.us when no Authorization header is sent.
+
+  Implication: the reference implementation (Days 8-10 per docs/project-plan.md)
+  needs a registered Screening API account. ADR-005 and r4 need to be amended to
+  reflect this. The probe payload at sample-requests/composite-household-01.json
+  validates the request schema; running it end-to-end with auth is a Days-8-10
+  prerequisite.
+
+probe_artifacts:
+  - sample-requests/composite-household-01.json
+  - sample-requests/responses/sandbox-noauth-401.json
+  - sample-requests/responses/screeningapi-noauth-401.json

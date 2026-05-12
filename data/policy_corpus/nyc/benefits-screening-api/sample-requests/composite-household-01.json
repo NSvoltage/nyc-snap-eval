@@ -1,0 +1,45 @@
+{
+  "_comment": [
+    "Composite synthetic household per CLAUDE.md hard rule #4.",
+    "Values are round-number archetypes drawn from r3-synthetic-data.md, NOT a real person.",
+    "Used as the request body for POST /eligibilityPrograms when probing the API.",
+    "Sending this without an Authorization header returns HTTP 401 'Unauthorized' (confirmed 2026-05-11)."
+  ],
+  "request": [
+    {
+      "household": [
+        {
+          "caseId": "synthetic-001",
+          "cashOnHand": "100.00",
+          "livingRentalType": "MarketRate",
+          "livingRenting": true,
+          "livingOwner": false,
+          "livingStayingWithFriend": false,
+          "livingHotel": false,
+          "livingShelter": false,
+          "livingPreferNotToSay": false
+        }
+      ],
+      "person": [
+        {
+          "age": 40,
+          "householdMemberType": "HeadOfHousehold",
+          "student": false,
+          "pregnant": false,
+          "unemployed": false,
+          "blind": false,
+          "disabled": false,
+          "veteran": false,
+          "livingRentalOnLease": true,
+          "incomes": [
+            {
+              "amount": "1500.00",
+              "frequency": "Monthly",
+              "type": "Wages"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
