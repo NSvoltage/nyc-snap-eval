@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "nyc-snap-eval: A statute-grounded evaluation suite for caseworker-facing SNAP benefits-navigation AI"
+abstract: >-
+  An illustrative evaluation suite of approximately seventy test cases across
+  seven failure surfaces, anchored to federal (7 CFR Part 273) and state (NYS
+  OTDA SNAP Source Book) policy citations, with a published Claude-graded
+  rubric and a narrow reference implementation. Scoped to caseworker-facing
+  deployment for SNAP in New York at a stated point in time.
+authors:
+  - given-names: "[Your Name]"
+    family-names: "[Your Surname]"
+type: software
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/[your-handle]/nyc-snap-eval"
+keywords:
+  - evaluation
+  - large language models
+  - public benefits
+  - SNAP
+  - responsible AI
+  - government AI
+date-released: 2026-MM-DD

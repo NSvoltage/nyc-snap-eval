@@ -1,0 +1,66 @@
+# Promptfoo configuration for nyc-snap-eval
+#
+# This is the entry point for the eval suite. It pins the judge model,
+# references the case sheets, and lists the systems under test.
+#
+# Per ADR-001, Promptfoo is the eval harness; cases are authored in a public
+# Google Sheet and exported to CSVs in eval/cases/ (the CSVs are the canonical
+# committed record).
+# Per ADR-007, Claude Opus 4.5 is the pinned judge.
+
+description: "nyc-snap-eval: caseworker-facing SNAP benefits-navigation AI"
+
+# --- Systems under test ---
+# We run the same eval against multiple configurations. The reference
+# implementation hits the local demo's API; comparison models hit their
+# provider APIs directly with a thin wrapper that gives them the same
+# system prompt as the reference implementation (where applicable) or the
+# simulated-baseline system prompt (per ADR-004).
+providers:
+  - id: claude-sonnet-4-5-reference-impl
+    label: "Reference implementation (Claude Sonnet 4.5 + RAG + tools)"
+    config:
+      # Hits the local demo's API endpoint
+      apiBaseUrl: http://localhost:3000/api/eval
+
+  - id: anthropic:messages:claude-sonnet-4-5
+    label: "Bare Claude Sonnet 4.5"
+
+  - id: openai:gpt-4o
+    label: "GPT-4o"
+
+  - id: google:gemini-2.5-pro
+    label: "Gemini 2.5 Pro"
+
+  - id: claude-sonnet-4-5-simulated-baseline
+    label: "Simulated baseline (simulation, not replication)"
+    # Per ADR-004: deliberately under-scaffolded; weak prompt, naive retrieval, no tools
+    config:
+      apiBaseUrl: http://localhost:3000/api/eval/baseline
+
+# --- Default test settings ---
+defaultTest:
+  options:
+    # Pinned judge per ADR-007
+    provider:
+      id: anthropic:messages:claude-opus-4-5
+      config:
+        temperature: 0
+    # The judge meta-prompt lives in eval/graders/llm_judge_meta_prompt.md
+    # and is referenced from individual category configs as needed
+    rubricPrompt: file://eval/graders/llm_judge_meta_prompt.md
+
+# --- Test cases ---
+# Cases are organized by category per ADR-006. Each CSV is exported from the
+# authoring Google Sheet.
+tests:
+  - file://eval/cases/A_mycity_replay.csv
+  - file://eval/cases/B_factual_recall.csv
+  - file://eval/cases/C_refusal_escalation.csv
+  - file://eval/cases/D_eligibility_edge_cases.csv
+  - file://eval/cases/E_adversarial.csv
+  - file://eval/cases/F_multilingual.csv
+  - file://eval/cases/G_grounding_citation.csv
+
+# --- Output ---
+outputPath: eval/results/latest/
